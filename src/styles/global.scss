@@ -7,13 +7,11 @@ $header-min-height: 100px;
 *::after,
 *::before {
 	box-sizing: border-box;
-	scrollbar-track-color: #ff3e3e;
-	scrollbar-color: #ff3e3e;
 	scroll-behavior: smooth;
 }
 
 ::selection {
-	background-color: $accent-red;
+	background-color: #69A0B8;
 	color: white;
 }
 
