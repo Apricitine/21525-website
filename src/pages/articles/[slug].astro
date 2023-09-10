@@ -1,0 +1,22 @@
+---
+import { Params } from "astro";
+import Base from "../../layouts/base.astro";
+import { CollectionEntry, getEntryBySlug } from "astro:content";
+
+const { slug }: Params = Astro.params;
+const entry = await getEntryBySlug("articles", slug);
+const { Content } = entry === undefined ? new Error() : await entry.render();
+---
+
+<Base route={entry === undefined ? "Something went wrong." : entry.data.title}>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <div id="blog-article">
+    <Content />
+  </div>
+</Base>
+
+<style lang='scss'>
+div#blog-article {
+  width: 60%;
+}
+</style>

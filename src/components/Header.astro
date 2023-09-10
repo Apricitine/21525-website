@@ -1,0 +1,134 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import "../styles/global.scss";
+---
+
+<header>
+  <nav>
+    <section id="left-nav">
+      <a id="home-link" href="/">
+        <img
+          src="/blockhead-ftc.png"
+          width="55px"
+          height="55px"
+          alt="blockheads icon for ftc"
+        />
+        <h2>BLOCKHEADS 5921</h2>
+      </a>
+
+      <HeaderLink id="about-link" href="/about">About</HeaderLink>
+      <span>|</span>
+      <HeaderLink id="docs-link" href="/docs">Documentation</HeaderLink>
+      <span>|</span>
+      <HeaderLink id="random-page-link" href="/random-page">Random Page</HeaderLink>
+    </section>
+    <section id="right-nav">
+      <a href="https://github.com/Blockheads-5921" id="blockhead-gh-link">
+        <img
+          src="/svg/github.svg"
+          alt="Blockhead's GitHub link."
+          width="40px"
+          height="40px"
+        />
+      </a>
+      <a href="https://github.com/Apricitine" id="tine-gh-link">
+        <img
+          src="/apricitine-logo.png"
+          alt="Apricitine's GitHub link."
+          width="55px"
+          height="55px"
+        />
+      </a>
+    </section>
+  </nav>
+</header>
+
+<style lang="scss">
+  @import "../styles/global.scss";
+  header {
+    box-shadow: 0 1px 5px rgb(25, 25, 25);
+    background: rgba(25, 25, 25, 0.947);
+    backdrop-filter: blur(4px);
+    min-width: 100%;
+    position: sticky;
+    min-height: $header-min-height;
+    z-index: 10;
+    top: 0;
+  }
+
+  nav {
+    display: flex;
+    padding: 1%;
+    width: 100%;
+    height: $header-min-height;
+
+    section#left-nav {
+      width: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      span {
+        user-select: none;
+      }
+    }
+
+    section#right-nav {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      padding-right: 1%;
+
+      a#blockhead-gh-link {
+        width: 40px;
+        height: 40px;
+        transition: all 0.25s ease;
+        border-radius: 50%;
+
+        &:hover {
+          transform: scale(1.125);
+          box-shadow: 0 0 7.5px rgb(70, 70, 70);
+        }
+      }
+
+      a#tine-gh-link {
+        width: 55px;
+        height: 55px;
+        transition: all 0.25s ease;
+        border-radius: 100%;
+        margin-left: 2.5%;
+
+        &:hover {
+          transform: scale(1.125);
+        }
+      }
+    }
+  }
+
+  a#home-link {
+    user-select: none;
+    width: fit-content;
+    border: 2px solid transparent;
+    transition: all 0.125s ease-in-out;
+    border-radius: 6px;
+    padding-left: 2%;
+    padding-right: 2%;
+    float: left;
+    display: flex;
+    color: rgb(255, 62, 62);
+    text-decoration: none;
+    align-items: center;
+    white-space: nowrap;
+
+    &:hover {
+      border: 2px solid rgba(128, 128, 128, 0.251);
+      background: radial-gradient(rgba(255, 255, 255, 0.08), transparent);
+    }
+
+    h2 {
+      margin-left: max(0, 2.5%);
+      font-size: 1.6rem;
+    }
+  }
+</style>

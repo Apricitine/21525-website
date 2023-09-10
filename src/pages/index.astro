@@ -1,0 +1,174 @@
+---
+import Base from "../layouts/base.astro";
+
+const welcomeMessage = "Think outside the block.";
+---
+
+<Base route="Home">
+  <embed src="/svg/blob-top.svg" id="robo-top" />
+  <embed src="/svg/blob-side.svg" id="robo-side" />
+  <embed src="/svg/blob-other.svg" id="robo-other" />
+  <embed src="/svg/blob-other-other.svg" id="robo-other-other" />
+  <main>
+    <section id="text-container">
+      <div id="title-container">
+        <h1>{welcomeMessage.toLocaleUpperCase()}</h1>
+      </div>
+      <div id="placeholder-space-title"></div>
+      <h2>Welcome to the 5921 website.</h2>
+      <p>
+        Hi! We're the Blockheads; a FIRST TECH CHALLENGE robotics team based in
+        La Canada California. We're a part of the <a
+          href="https://lacanadaengineeringclub.org"
+          >La Canada Engineering Club</a
+        >, and we're one of the two FTC teams that are a part of the
+        organization. Our team is the non-advanced team, so trust us when we say
+        that we have a long way to go. We're always learning and improving; this
+        website will be a sort home base for us to organize the <a
+          href="/documentation">documentation</a
+        > for our code, CAD, and other stuff.
+        <br />
+        <br />
+        Aside from that, not much to say! You can find some unfinished documentation
+        on this site and some more stuff about us, too. Obviously this website is
+        not complete and is currently trash. The author will be adding more and more
+        to it later on.
+      </p>
+    </section>
+    <section id="image-container">
+      <img
+        src="/blockhead-ftc.png"
+        alt="The Blockhead's 5921 logo."
+        width="50%"
+        height="50%"
+      />
+    </section>
+  </main>
+  <div id="placeholder"></div>
+</Base>
+
+<style lang="scss">
+  @use "../styles/animations.scss";
+  @import "../styles/global.scss";
+  @include animations.shadow-animation;
+
+  Footer {
+    z-index: -1;
+  }
+
+  img[alt="kitty cat"] {
+    z-index: 2;
+    display: block;
+  }
+
+  main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    section#text-container {
+      border-bottom: rgb(68, 68, 68);
+      margin-top: 2%;
+      margin-bottom: 2%;
+      width: 50%;
+      padding: 1%;
+      color: #9b9b9b;
+
+      div#title-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 32.5vw;
+
+        h1 {
+          font-size: 5rem;
+          color: white;
+          text-shadow: 0 0 10px white;
+          margin: 0;
+          font-weight: 900;
+          user-select: none;
+          border-radius: 50px;
+          background: radial-gradient(
+            rgba(44, 44, 44, 0.253),
+            transparent,
+            transparent
+          );
+        }
+      }
+
+      h2 {
+        font-size: 3rem;
+        color: rgb(186, 186, 186);
+        text-shadow: 0 0 2px rgb(186, 186, 186);
+        transition: all 400ms ease-in;
+        font-weight: bold;
+        border-radius: 18px;
+        filter: blur(0.3px);
+        margin-bottom: 16%;
+
+        &:hover {
+          text-shadow: 2px 2px 4px rgba(186, 186, 186, 0.384);
+          filter: blur(0px);
+        }
+      }
+
+      div#placeholder-space-title {
+        height: 15vw;
+      }
+    }
+
+    section#image-container {
+      width: 50%;
+      top: 30%;
+      align-self: flex-start;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      z-index: -1;
+
+      img {
+        border-radius: 50%;
+        position: relative;
+        z-index: -5;
+        user-select: none;
+        animation: 5s ease-in-out infinite shadow-animation;
+        display: hidden;
+      }
+    }
+  }
+
+  embed {
+    position: absolute;
+    z-index: -5;
+
+    &#robo-top {
+      width: 20%;
+      transform: translate(200%, -10%);
+    }
+
+    &#robo-side {
+      width: 30%;
+      transform: translate(225%, -20%);
+    }
+
+    &#robo-other {
+      width: 25%;
+      transform: translate(5%, 55%);
+    }
+
+    &#robo-other-other {
+      width: 15%;
+      transform: translate(250%, 175%);
+    }
+  }
+
+  div#placeholder {
+    height: 45px;
+  }
+</style>
