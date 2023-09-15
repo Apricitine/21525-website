@@ -39,6 +39,7 @@ const welcomeMessage = "Think outside the block.";
   @use "../styles/animations.scss";
   @import "../styles/global.scss";
   @include animations.shadow-animation;
+  @include animations.embed-load-animation;
 
   Footer {
     z-index: -1;
@@ -135,6 +136,7 @@ const welcomeMessage = "Think outside the block.";
   embed {
     position: absolute;
     z-index: -5;
+    animation: embed-load-animation 1s linear;
 
     &#robo-top {
       width: 20%;
