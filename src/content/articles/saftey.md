@@ -1,5 +1,5 @@
 ---
-title: Macchine Certification
+title: Machine Certification
 author: Trentan Davé
 ---
 # The Programming Team of 21525
